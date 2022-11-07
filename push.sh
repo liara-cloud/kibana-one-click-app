@@ -1,1 +1,1 @@
-docker push liararepo/kibana-one-click-app:8.4
+docker push liaracloud/kibana-one-click-app:8.4
