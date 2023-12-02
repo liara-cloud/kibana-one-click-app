@@ -1,1 +1,1 @@
-docker build -t liaracloud/kibana-one-click-app:8.10.4 .
+docker build -t liaracloud/kibana-one-click-app:8.11.1 .
