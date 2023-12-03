@@ -3,8 +3,15 @@
 set -e
 
 KIBANA_CONFIG_PATH="/opt/bitnami/kibana/config/kibana.yml"
+KIBANA_NODE_OPTIONS_PATH="/opt/bitnami/kibana/config/node.options"
 
 echo '> Configuring Kibana...'
+
+# https://www.elastic.co/guide/en/kibana/8.11/production.html#openssl-legacy-provider
+cp -r ./node.options "$KIBANA_NODE_OPTIONS_PATH"
+
+# https://www.elastic.co/guide/en/kibana/master/kibana-encryption-keys.html
+/opt/bitnami/kibana/bin/kibana-encryption-keys generate --quiet >> "$KIBANA_CONFIG_PATH"
 
 echo "server.name: $KIBANA_SERVER_NAME" >> "$KIBANA_CONFIG_PATH"
 echo "server.publicBaseUrl: $KIBANA_SERVER_PUBLICBASEURL" >> "$KIBANA_CONFIG_PATH"
