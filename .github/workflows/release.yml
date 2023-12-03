@@ -23,7 +23,7 @@ jobs:
       - name: Build and push
         run: |
           echo '> Building images...'
-          docker build -t liaracloud/kibana-one-click-app:8.10.4 .
+          docker build -t liaracloud/kibana-one-click-app:8.11.1 .
 
           echo '> Pushing images...'
-          docker push liaracloud/kibana-one-click-app:8.10.4
+          docker push liaracloud/kibana-one-click-app:8.11.1
