@@ -12,7 +12,7 @@ sed -i '/--dns-result-order=ipv4first/d' "$KIBANA_NODE_OPTIONS_PATH"
 sed -i '/## restore < Node 16 default DNS lookup behavior/d' "$KIBANA_NODE_OPTIONS_PATH"
 
 # https://www.elastic.co/guide/en/kibana/master/kibana-encryption-keys.html
-/opt/bitnami/kibana/bin/kibana-encryption-keys generate --quiet >> "$KIBANA_CONFIG_PATH"
+# /opt/bitnami/kibana/bin/kibana-encryption-keys generate --quiet >> "$KIBANA_CONFIG_PATH"
 
 echo "server.name: $KIBANA_SERVER_NAME" >> "$KIBANA_CONFIG_PATH"
 echo "server.publicBaseUrl: $KIBANA_SERVER_PUBLICBASEURL" >> "$KIBANA_CONFIG_PATH"
